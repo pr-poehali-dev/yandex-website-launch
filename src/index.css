@@ -4,89 +4,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 120 20% 5%;
+    --foreground: 120 10% 90%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 120 15% 8%;
+    --card-foreground: 120 10% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 120 15% 8%;
+    --popover-foreground: 120 10% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 60% 45%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 120 15% 12%;
+    --secondary-foreground: 120 10% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 5% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 20% 18%;
+    --input: 120 15% 12%;
+    --ring: 120 60% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --mc-green: #4caf50;
+    --mc-dark-green: #1b5e20;
+    --mc-gold: #ffd700;
+    --mc-brown: #5d4037;
+    --mc-stone: #78909c;
+    --mc-dirt: #795548;
+    --mc-bg: #0d1f0d;
+    --mc-card: #122212;
   }
 }
 
@@ -97,5 +52,258 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Rubik", sans-serif;
+    background-color: var(--mc-bg);
+    background-image:
+      radial-gradient(
+        ellipse at 20% 50%,
+        rgba(76, 175, 80, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        rgba(255, 215, 0, 0.05) 0%,
+        transparent 40%
+      ),
+      url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' x='0' y='0' fill='%2322ff2210'/%3E%3C/svg%3E");
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-pixel {
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .pixel-border {
+    box-shadow:
+      4px 0 0 0 currentColor,
+      -4px 0 0 0 currentColor,
+      0 4px 0 0 currentColor,
+      0 -4px 0 0 currentColor,
+      inset 4px 0 0 0 rgba(255, 255, 255, 0.15),
+      inset 0 4px 0 0 rgba(255, 255, 255, 0.15),
+      inset -4px 0 0 0 rgba(0, 0, 0, 0.4),
+      inset 0 -4px 0 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .mc-btn {
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    background: #4caf50;
+    color: #0d1f0d;
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    position: relative;
+    image-rendering: pixelated;
+    box-shadow:
+      inset -4px -4px 0 #2e7d32,
+      inset 4px 4px 0 #81c784;
+    transition: all 0.1s;
+  }
+
+  .mc-btn:hover {
+    background: #66bb6a;
+    transform: translateY(-2px);
+    box-shadow:
+      inset -4px -4px 0 #388e3c,
+      inset 4px 4px 0 #a5d6a7;
+  }
+
+  .mc-btn:active {
+    transform: translateY(1px);
+    box-shadow:
+      inset -2px -2px 0 #2e7d32,
+      inset 2px 2px 0 #81c784;
+  }
+
+  .mc-btn-gold {
+    background: #ffd700;
+    color: #1a1a00;
+    box-shadow:
+      inset -4px -4px 0 #b8860b,
+      inset 4px 4px 0 #ffe44d;
+  }
+
+  .mc-btn-gold:hover {
+    background: #ffe44d;
+    box-shadow:
+      inset -4px -4px 0 #daa520,
+      inset 4px 4px 0 #fff176;
+  }
+
+  .mc-card {
+    background: var(--mc-card);
+    border: 3px solid #2e7d32;
+    position: relative;
+  }
+
+  .mc-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    pointer-events: none;
+  }
+
+  .pixel-text-shadow {
+    text-shadow:
+      3px 3px 0 rgba(0, 0, 0, 0.8),
+      -1px -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .gold-text {
+    color: var(--mc-gold);
+    text-shadow:
+      2px 2px 0 #8b6914,
+      3px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .green-glow {
+    text-shadow:
+      0 0 20px rgba(76, 175, 80, 0.8),
+      0 0 40px rgba(76, 175, 80, 0.4);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.7s ease-out both;
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(76, 175, 80, 0.9),
+      0 0 60px rgba(76, 175, 80, 0.4);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pixel-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-2deg);
+  }
+}
+
+.pixel-float {
+  animation: pixel-float 4s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1f0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e7d32;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4caf50;
+}
+
+/* Nav link hover */
+.nav-link {
+  position: relative;
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+  color: #81c784;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--mc-gold);
+  transition: width 0.3s;
+}
+.nav-link:hover {
+  color: var(--mc-gold);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Pixel decorations */
+.pixel-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--mc-green);
+  display: inline-block;
+  image-rendering: pixelated;
 }
